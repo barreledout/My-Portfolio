@@ -15,35 +15,39 @@
         <link href="https://db.onlinewebfonts.com/c/1a1a007c80906d0288ce398b89811944?family=ABC+Diatype+Light" rel="stylesheet" type="text/css"/> <!--ABC Diatype Light-->
         <link href="https://db.onlinewebfonts.com/c/b5dc5645d8bcfd701cdc1edd93253de2?family=ABC+Diatype+Medium" rel="stylesheet" type="text/css"/> <!--ABC Diatype Medium-->
 
+
         <script src="https://kit.fontawesome.com/c3e81cc119.js" crossorigin="anonymous" defer></script>
 
     </head>
     
-    <body>
-        <section id="hero">
-            <div id="top-navbar">
-                <div id="top-left">Ryan.</div>
-                <nav id="top-right">
-                    <li><a class="nav-links" href="#about">About</a></li>
-                    <li><a class="nav-links" href="#project">Projects</a></li>
-                    <li><a class="nav-links" href="#experience">Experience</a></li>
-                    <li><a class="nav-links" href="#contact">Contact Me</a></li>
-                </nav>
-                <div class="dropDown">
-                    <button type="button" id="light-toggle" class="drop-down-btn" onclick="showDropDown()">
-                        <i class="fa-solid fa-bars fa-2x"></i> 
-                    </button>
-                    <div id="drop-down-content" class="drop-down-content">
-                        <p>Theme</p>
-                        <div id="themes">
-                            <button id="light-mode">Light</button>
-                            <button id="dark-mode">Dark</button>
-                            <button id="system-mode">System</button>
-                        </div>
+    <body class="">
+        <div id="top-navbar">
+            <div id="top-left">Ryan.</div>
+            <nav id="top-right">
+                <li><a class="nav-links" href="#about">About</a></li>
+                <li><a class="nav-links" href="#project">Projects</a></li>
+                <li><a class="nav-links" href="#experience">Experience</a></li>
+                <li><a class="nav-links" href="#contact">Contact Me</a></li>
+            </nav>
+            <div class="dropDown">
+                <button type="button" id="light-toggle" class="drop-down-btn" onclick="showDropDown()">
+                    <i class="fa-solid fa-ellipsis fa-2x"></i>
+                </button>
+                <div id="drop-down-content" class="drop-down-content">
+                    <p>Theme</p>
+                    <div id="themes">
+                        <button type="button" id="light-mode" class="light-mode-cl">
+                            <img class="theme-icon" id="light-icon" src="/assets/Foggy (HD).png" alt="Light Mode">
+                        </button>
+                        <button type="button" id="dark-mode" class="dark-mode-cl">
+                            <img class="theme-icon" id="dark-icon" src="/assets/Crescent 3D Model (HD).png" alt="Dark Mode">
+                        </button>                  
                     </div>
-
                 </div>
             </div>
+        </div>
+        <section id="hero">
+            
         </section>
 
     <script src="script.js"></script>
