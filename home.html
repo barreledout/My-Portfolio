@@ -15,7 +15,6 @@
         <link href="https://db.onlinewebfonts.com/c/1a1a007c80906d0288ce398b89811944?family=ABC+Diatype+Light" rel="stylesheet" type="text/css"/> <!--ABC Diatype Light-->
         <link href="https://db.onlinewebfonts.com/c/b5dc5645d8bcfd701cdc1edd93253de2?family=ABC+Diatype+Medium" rel="stylesheet" type="text/css"/> <!--ABC Diatype Medium-->
 
-
         <script src="https://kit.fontawesome.com/c3e81cc119.js" crossorigin="anonymous" defer></script>
 
     </head>
@@ -29,27 +28,16 @@
                 <li><a class="nav-links" href="#experience">Experience</a></li>
                 <li><a class="nav-links" href="#contact">Contact Me</a></li>
             </nav>
-            <div class="dropDown">
-                <button type="button" id="light-toggle" class="drop-down-btn" onclick="showDropDown()">
-                    <i class="fa-solid fa-ellipsis fa-2x"></i>
+            <div id="theme-container">
+                <button type="button" id="light-toggle" class="drop-down-btn">
+                    <img src="/assets/sun-svgrepo-com.svg" class="light-mode" id="light-container" alt="Light Theme">
                 </button>
-                <div id="drop-down-content" class="drop-down-content">
-                    <p>Theme</p>
-                    <div id="themes">
-                        <button type="button" id="light-mode" class="light-mode-cl">
-                            <img class="theme-icon" id="light-icon" src="/assets/Foggy (HD).png" alt="Light Mode">
-                        </button>
-                        <button type="button" id="dark-mode" class="dark-mode-cl">
-                            <img class="theme-icon" id="dark-icon" src="/assets/Crescent 3D Model (HD).png" alt="Dark Mode">
-                        </button>                  
-                    </div>
-                </div>
             </div>
         </div>
         <section id="hero">
             
         </section>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     </body>
 </html>

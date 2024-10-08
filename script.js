@@ -1,69 +1,56 @@
-                                        // Drop down menu //
-let dropDownShowing = false;
-
-const dropDownBtn = document.getElementById('light-toggle');
-const dropDownContent = document.getElementById('drop-down-content');
-
-// Checks if the drop down menu is showing on DOMS.
-function showDropDown() {
-    dropDownShowing = !dropDownShowing
-    dropDownContent.classList.toggle('show-dropDown-content');
-    
-    if (dropDownShowing) {
-        dropDownBtn.style.transition = 'all .3s ease-in-out';
-        
-    } else {
-        dropDownBtn.style.transition = 'all .3s ease-in-out';
-        
-    }
-    
-};
-
-// Closes drop down menu when clicked outside of the element. 
-const clickedOutside = () => {
-    document.addEventListener('click', (e) => {
-        e.preventDefault();
-
-        if (!dropDownBtn.contains(e.target) && !dropDownContent.contains(e.target)) {
-            dropDownContent.classList.remove('show-dropDown-content');
-            dropDownShowing = false;    
-        }
-    });
-}
-clickedOutside();
 
                                 // Toggle for light, dark theme //                               
-const lightModeBtn = document.getElementById('light-mode');
-const darkModeBtn = document.getElementById('dark-mode');
-const sunIcon = document.getElementById('light-icon');
-const moonIcon = document.getElementById('dark-icon');
+const dropDownBtn = document.getElementById('light-toggle');
+const imgContainer = document.getElementById('light-container');
+const sunUrl = '/assets/sun-svgrepo-com.svg';
+const moonUrl = '/assets/moon-stars-svgrepo-com.svg';
 
 const storedTheme = localStorage.getItem('theme');
-let isLightMode = storedTheme === 'true';    //localStorage value can only be string 
-console.log(storedTheme)
+//default theme is light mode
+let isLightMode = storedTheme === 'true'; 
 
-if (storedTheme === 'false') {
-    document.body.classList.toggle('dark');
-} else {
+//This conditional block handles which theme should appear when user enters the website//
+
+/*If it's a first time visitor to the site, the value of storedTheme
+will be false, therefore, isLightMode === false, so we remove the
+dark theme to make it light theme by defautl.*/
+if(storedTheme === null) {
     document.body.classList.remove('dark');
-};
+    imgContainer.src = sunUrl;
+}
+// if it is light mode
+else if (storedTheme === 'true') {
+    document.body.classList.remove('dark');
+    imgContainer.src = sunUrl;
+    
+//if it is dark mode    
+} else {
+    document.body.classList.toggle('dark');
+    imgContainer.src = moonUrl;
+    
+}
 
-lightModeBtn.addEventListener('click', () => {
-    if (!isLightMode && document.body.classList.contains('dark')) {
-        document.body.classList.remove('dark')
-        isLightMode = true;
+// theme switch functionality
+const applyTheme = () => {
+    //if light mode, change to dark
+    if (isLightMode) { 
+        document.body.classList.toggle('dark');
+        imgContainer.src = moonUrl;
+        //setting the value to false since it is no longer light mode.
+        localStorage.setItem('theme', 'false'); 
+        
+    //if dark mode, change to light mode   
+    } else  { 
+        document.body.classList.remove('dark');
+        imgContainer.src = sunUrl;
         localStorage.setItem('theme', 'true');
         
-        
     }
-});
+    // logic change when button is clicked.
+    isLightMode = !isLightMode;
+    console.log(localStorage.getItem('theme'));
+};
 
-darkModeBtn.addEventListener('click', () => {
-    if(isLightMode && !document.body.classList.contains('dark')) {
-        document.body.classList.toggle('dark');
-        isLightMode = false;
-        localStorage.setItem('theme', 'false');
-        
-    }
-});
+dropDownBtn.addEventListener('click', applyTheme);
 
+                                          // END //    
